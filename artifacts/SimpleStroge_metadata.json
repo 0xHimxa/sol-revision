@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -21,6 +21,25 @@
 				"name": "addPersonNum",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "nameToFavNum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -61,6 +80,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "retrived",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -89,7 +121,7 @@
 		"compilationTarget": {
 			"simpleSttorage.sol": "SimpleStroge"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "prague",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -102,11 +134,11 @@
 	},
 	"sources": {
 		"simpleSttorage.sol": {
-			"keccak256": "0xabc813c7ad2bab1eb5617ac7d0bab65b008c650ec107f567293d67da7bba3a47",
+			"keccak256": "0x4215d2b91d58664a9a067b5c8adfee93d786079e65c52d365ffaa938b3b510a9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b262f9dac0161e3d745e924a5779d54e71f290e4f3229c392706a22127563bc9",
-				"dweb:/ipfs/QmYzEq64GX3QxYGzVTF7GXkhSVU65m2N82rWpC2UqWgt3R"
+				"bzz-raw://d4ac0e12b05e1a148feef1b373f924171fbd41e7d1a0a6f340e33b153b16beab",
+				"dweb:/ipfs/QmV2KvDC59JCToGtosGfVxNzTRiZtmqAidnNR7HhtFjwzE"
 			]
 		}
 	},

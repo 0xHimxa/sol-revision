@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+pragma solidity 0.8.30;
 
 
 contract SimpleStroge{
@@ -26,9 +26,34 @@ Person[] public personList;
 
 
 
+// now to be able to access user fav number just by getting thier name and returnin tier number
+// we use mapping similar to object
+
+
+
+mapping(string => uint256) public nameToFavNum;
+
+
+
+
+
+
+
+
+// memory and calldata are very similar //
+// memory value been pass to anf fn can be re asgined but calldata we cant do that, dat their major diff
+
+//they are use for storing temprary varables
+
+
 
 function addPersonNum(string memory _name, uint256 _favnum) external  {
+   
+   //now we add the username and thier fav num to the mapping
+   nameToFavNum[_name] = _favnum;
+
   Person  memory favnum = Person({name: _name, favnum: _favnum});
+
 
  // you can push to an array with this 
  personList.push(favnum);
@@ -60,5 +85,9 @@ function store(uint256 _favnum) public{
     return myfavnum;
 } 
 
+ function retrived() public  view  returns(uint256){
+
+    return myfavnum;
+} 
 
 }
