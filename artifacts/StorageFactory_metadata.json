@@ -6,19 +6,8 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_favnum",
-						"type": "uint256"
-					}
-				],
-				"name": "addPersonNum",
+				"inputs": [],
+				"name": "deploySimpleStorage",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -26,12 +15,31 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "",
-						"type": "string"
+						"type": "uint256"
 					}
 				],
-				"name": "nameToFavNum",
+				"name": "listofsimpleStorage",
+				"outputs": [
+					{
+						"internalType": "contract SimpleStroge",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_index",
+						"type": "uint256"
+					}
+				],
+				"name": "sfRetrive",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -46,61 +54,16 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "personList",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "favnum",
+						"name": "_index",
 						"type": "uint256"
 					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "retrive",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "retrived",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "_favnum",
 						"type": "uint256"
 					}
 				],
-				"name": "store",
+				"name": "sfStore",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -119,7 +82,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"storeF/storagefactory.sol": "SimpleStroge"
+			"storeF/storagefactory.sol": "StorageFactory"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -133,12 +96,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"storeF/storagefactory.sol": {
-			"keccak256": "0xb4f8e6a362e0971514702fe10f5e8013f3b80c4e68d7f271e2d61b51a4d022c5",
+		"simpleSttorage.sol": {
+			"keccak256": "0x4215d2b91d58664a9a067b5c8adfee93d786079e65c52d365ffaa938b3b510a9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2ff25d9d13e983bf018df5ba36b22d482431a07876650e27173613be39e0f477",
-				"dweb:/ipfs/QmP8DW8koFisBCMyzeszpHdkACHwwyqRw8bDsQ2km5cVhg"
+				"bzz-raw://d4ac0e12b05e1a148feef1b373f924171fbd41e7d1a0a6f340e33b153b16beab",
+				"dweb:/ipfs/QmV2KvDC59JCToGtosGfVxNzTRiZtmqAidnNR7HhtFjwzE"
+			]
+		},
+		"storeF/storagefactory.sol": {
+			"keccak256": "0x4df81f2f06f8fddf399708cf93f60a35734e62595bd302db7fb90c9694cf4d21",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b49f3963903c681645cd995f54966aec286211139b0b42c3968e353d8b783830",
+				"dweb:/ipfs/QmcrkJXe9GGXYrWwDRk4ap9poVpGjKdFoH1hfDWj7VG1eU"
 			]
 		}
 	},
