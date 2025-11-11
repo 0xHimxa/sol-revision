@@ -68,7 +68,7 @@ function addPersonNum(string memory _name, uint256 _favnum) external  {
 
 
 // if we pass input we have to define the type of the imput  like bule
-function store(uint256 _favnum) public{ 
+function store(uint256 _favnum) public virtual {  
      myfavnum =  _favnum;
 }
 
