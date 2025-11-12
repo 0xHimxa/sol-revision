@@ -1,0 +1,107 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "fundme",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"fundme/fundme.sol": "Fundme"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+			]
+		},
+		"fundme/fundme.sol": {
+			"keccak256": "0x5dd27cb6c25be608dbeb0d3c1779dd10d1a24443c6710ebfee4709ecd6843fe6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://17c4b97d5b21bc16d92cf1561d222201034f5a919a9d62f0e302d1387d1074f0",
+				"dweb:/ipfs/QmawmAZuG5w1gjs42bxnHfQx3pXR4rRoqA9d51VNHc7gTh"
+			]
+		},
+		"fundme/lib.sol": {
+			"keccak256": "0xa905b77e26646e2f4aa78ac5ea9c46b5d8fd7d0bec45eba8a19e7dc554faab39",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d02d6793548f98614e44f87eed3f95404fc625debf989a762bf1c41276a5623",
+				"dweb:/ipfs/QmRyiXkgf6NNduwsbqNTuKfci9yoesCopXwwny7ChVjSEe"
+			]
+		}
+	},
+	"version": 1
+}

@@ -10,6 +10,7 @@ contract Savecontact {
     }
 
     UserInfo[] public userInfo;
+   
 
 mapping(string => UserInfo) public userInfoByName;
 
