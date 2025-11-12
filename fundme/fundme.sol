@@ -3,7 +3,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.30;
 import{PriceConverter} from "./lib.sol";
-// this i a fn from chainLink that will be providing us with realtime price of coin
+
+
+
+
+error NotOwner();
 
 
 contract Fundme{
@@ -11,12 +15,19 @@ contract Fundme{
   // it will automatically pass it sel in only wen it accept 2 input that wen we type the other in
   using PriceConverter for uint256;
 
-  address owner;
+
+// to save gas for variable we only declear onces like: we write it in caps MINIMUM_USD we add constant to it
+// while for variable  that we only chainge after the contract is deployed we use immutable;
+
+
+uint256  public constant MINIMUM_USD = 5e18;
+
+  address public immutable i_owner;
 
 // constructer is a fn that is been called righ wen the contruct is deployed
 
 constructor(){
-  owner = msg.sender;
+ i_owner = msg.sender;
 }
 
 
@@ -51,16 +62,15 @@ function fundme() public payable {
   // allow users to send $
   // have menimu amount
 
-uint256 minimum = 5e18;
 
 // the msg.value let us know how much the user is sending
   //msg.value;
 
 
-// the require is use to set minimum like how we do it below, and we added error message
+// the require is use to set MINIMUM_USD like how we do it below, and we added error message
 
 //msg.value is a uint so it have asse to our priceconver lib
-  require(msg.value.getConvertionRate() > minimum,'please increase the value');
+  require(msg.value.getConvertionRate() > MINIMUM_USD,'please increase the value');
 
   addressToAmountFunded[msg.sender] += msg.value;
   funders.push(msg.sender);
@@ -70,7 +80,7 @@ uint256 minimum = 5e18;
 }
 
 
-function withdraw()public{
+function withdraw()public onlyOwner{
 // first we need to create a loop to recent the amount founders send back to zero
 
 
@@ -108,6 +118,37 @@ require(callsuccess,'transfer failed');
 
 
 
+}
+
+
+
+
+// modifiers are kinda like guard we put, bufore the function runs it first check if condition are meant
+modifier onlyOwner(){
+
+
+// the string in dis require cost more gas cause it been stored in a string
+//instead we use one of this 
+// first we create our own custom error outside the function
+
+ //instead of dis 
+  require(msg.sender == i_owner,'only owner can call this');
+
+  //we do this 
+   require(msg.sender == i_owner,NotOwner());
+
+
+//or this
+
+if(msg.sender != i_owner){
+
+  // revet to cancel the transaction like require
+  revert NotOwner();
+}
+
+  
+  // this line below simply means after the up one is meant run the rest code here
+  _;
 }
 
 
