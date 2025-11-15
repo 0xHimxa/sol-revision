@@ -109,6 +109,11 @@
 						"internalType": "bool",
 						"name": "isRefunded",
 						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "exits",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -196,11 +201,11 @@
 			]
 		},
 		"crowndfound/raisefund.sol": {
-			"keccak256": "0xadc49e0e171aaf17a9ddd7bf700c72d3d69ae09de2b880e9d1024d525b6d767c",
+			"keccak256": "0x1bef711ed4195f51088300b8250c68d3c68a0a365d2eeaedbfad806e59482379",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ffe5acea7264e11dfc0824fd0d816949ae227c84ee896ca689d127589bf23d03",
-				"dweb:/ipfs/QmQWaDnmeByvrvcDxeEdQf9YCTc6tUkvDu4SsqqSzwbMKa"
+				"bzz-raw://69b13dbfce3101ff7df030e28a44faa1f363d4dacd204c737e6ac901fe831bf0",
+				"dweb:/ipfs/QmPRUkhHvsUTrVSjrn29wgV1VicPk1icbBG95KWTXDHAcm"
 			]
 		}
 	},

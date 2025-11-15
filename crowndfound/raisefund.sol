@@ -49,7 +49,8 @@ contract RaiseFunds {
         uint256 totalRaised;          // Total ETH raised so far
         bool isActive;                // True if project is currently accepting funds
         bool isCompleted;             // True if goal is reached
-        bool isRefunded;              // True if funds were refunded
+        bool isRefunded;  
+        bool exits;         // True if funds were refunded
     }
 
     // Function to create a new fundraising project
@@ -64,7 +65,7 @@ contract RaiseFunds {
         project.isActive = true;
         project.isCompleted = false;
         project.isRefunded = false;
-
+         project.exits = true;
         // Add the creator as the first funder with 0 contribution
       
        
@@ -86,6 +87,9 @@ contract RaiseFunds {
         // Logic to update project funding will go here (not implemented yet)
     Fund_Raise_Info storage projectInfo = fundRaisingProjects[_name];
  
+
+//this line  check if a project exits
+   require(projectInfo.exits, "Project does not exist");
 
 
    require(projectInfo.isActive, "Project is not active");

@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "Cantdabyzero",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_num",
+						"type": "uint256"
+					}
+				],
+				"name": "addnum",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"crowndfound/error.sol": "practiceError"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"crowndfound/error.sol": {
+			"keccak256": "0xba8a2529a9248c6169d1145d3f5126e26c6503e86b7ab586d520a2cf47619927",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3b82cc5a949e4f0e8e42975b8d9d217506ffd6d1b717b38b1f9490bf56fb5238",
+				"dweb:/ipfs/QmXcxNLoc5SyTgzeQvyLJcRp8TQpV4HAvvxEnBeotZwMr8"
+			]
+		}
+	},
+	"version": 1
+}
