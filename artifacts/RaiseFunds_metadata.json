@@ -40,11 +40,6 @@
 						"internalType": "uint256",
 						"name": "_goal",
 						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_deadline",
-						"type": "uint256"
 					}
 				],
 				"name": "createproject",
@@ -53,7 +48,13 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					}
+				],
 				"name": "fundProject",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -86,11 +87,6 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "deadline",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "totalRaised",
 						"type": "uint256"
 					},
@@ -108,6 +104,30 @@
 						"internalType": "bool",
 						"name": "isRefunded",
 						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funderinfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "funder",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -158,11 +178,11 @@
 			]
 		},
 		"crowndfound/raisefund.sol": {
-			"keccak256": "0x7ea81d50eab7f9ed7ce953ea0437551bfcde0555c5c819458ce88118c450fbd8",
+			"keccak256": "0x12afdc4837b88af48152cd2be2e83fcb2cd230c5e61571a5bb8bbfeda725e7a9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://da2ad89779097623022180c64bae970461125bc5ae0b7c0c4332cca257760a5d",
-				"dweb:/ipfs/QmcqXrYW6NHuuB6DBWtWFkyfRjuHnp6vNEU18QNGGikrcx"
+				"bzz-raw://8f97e188a4678a0c4102799e0ef7c17e0a277492ad01b09346950d4d87ed861b",
+				"dweb:/ipfs/QmZ7t85aeHwbH91DaWxKmyqXEfYEVEPpRCzeHK5hvvB7fH"
 			]
 		}
 	},

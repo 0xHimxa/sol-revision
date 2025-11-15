@@ -16,10 +16,12 @@ contract RaiseFunds {
     using PriceConverter for uint256;
 
     // Minimum funding amount in USD (scaled to 18 decimals)
-    uint256 public constant MINIMUM_USD = 5e18;
+    uint256 public constant MINIMUM_USD = 2e18;
 
     // Mapping of project names to their fundraising info
     mapping (string projectname => Fund_Raise_Info) public fundRaisingProjects;
+
+   
 
     // Struct representing a funder and their contribution
     struct funders {
@@ -27,12 +29,15 @@ contract RaiseFunds {
         uint256 amount;
     }
 
+
+     //funder test
+    funders[] public funderinfo;
+
     // Struct representing the details of a fundraising project
     struct Fund_Raise_Info {
         string name;                  // Project name
         address payable owner;        // Owner of the project
         uint256 goal;                 // Funding goal
-        uint256 deadline;             // Timestamp when project ends
         uint256 totalRaised;          // Total ETH raised so far
         funders[] funder;             // List of all funders
         bool isActive;                // True if project is currently accepting funds
@@ -41,7 +46,7 @@ contract RaiseFunds {
     }
 
     // Function to create a new fundraising project
-    function createproject(string calldata _name, uint256 _goal, uint256 _deadline) public {
+    function createproject(string calldata _name, uint256 _goal) public {
         // Get storage reference for the project
         Fund_Raise_Info storage project = fundRaisingProjects[_name];
 
@@ -49,7 +54,6 @@ contract RaiseFunds {
         project.name = _name;
         project.owner = payable(msg.sender);
         project.goal = _goal;
-        project.deadline = block.timestamp + _deadline;
         project.isActive = true;
         project.isCompleted = false;
         project.isRefunded = false;
@@ -63,7 +67,7 @@ contract RaiseFunds {
     }
 
     // Function to fund a project
-    function fundProject() public payable {
+    function fundProject(string  calldata _name) public payable {
         // Check if sent ETH meets minimum USD requirement
         if (msg.value.converterUSD() < MINIMUM_USD) {
             revert IncreaseAmount('Sent ETH is below minimum requirement');
@@ -73,13 +77,32 @@ contract RaiseFunds {
         // require(msg.value.converterUSD() > MINIMUM_USD,'please in crease money');
 
         // Logic to update project funding will go here (not implemented yet)
+    Fund_Raise_Info storage projectInfo = fundRaisingProjects[_name];
+ 
+
+
+   require(projectInfo.isActive, "Project is not active");
+
+    uint256 amount = msg.value.converterUSD();
+    
+    // Prevent overfunding
+    
+
+    // Record the fund
+    projectInfo.totalRaised += amount;
+    funders memory funder = funders({funder: msg.sender, amount: amount});
+    projectInfo.funder.push(funder);
+    funderinfo.push(funder);
+
+    // Check if goal reached
+    if(projectInfo.totalRaised >= projectInfo.goal){
+        projectInfo.isCompleted = true;
+        projectInfo.isActive = false;
     }
 }
 
 
 
 
-
-
-
+    }
 

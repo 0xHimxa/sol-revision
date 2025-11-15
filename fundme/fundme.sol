@@ -152,6 +152,23 @@ if(msg.sender != i_owner){
 }
 
 
+// is a fn that is been called when users try sending money to our contract address directly
+// which is without using oir fund keyword we have here
+receive() external payable { 
+
+  fundme();
+}
+
+// similar to recive but this time around the user passdata still without using butn direct
+fallback() external payable { 
+
+  fundme();
+}
+
+
+
+
+
 
 
 
