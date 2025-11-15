@@ -11,6 +11,13 @@ pragma solidity ^0.8;
 error IncreaseAmount(string _message);
 
 contract RaiseFunds {
+    address immutable i_owner;
+
+
+    constructor(){
+        i_owner = payable ( msg.sender);
+    }
+
 
     // Using a library for price conversions 
     using PriceConverter for uint256;
@@ -32,6 +39,7 @@ contract RaiseFunds {
 
      //funder test
     funders[] public funderinfo;
+    
 
     // Struct representing the details of a fundraising project
     struct Fund_Raise_Info {
@@ -39,14 +47,13 @@ contract RaiseFunds {
         address payable owner;        // Owner of the project
         uint256 goal;                 // Funding goal
         uint256 totalRaised;          // Total ETH raised so far
-        funders[] funder;             // List of all funders
         bool isActive;                // True if project is currently accepting funds
         bool isCompleted;             // True if goal is reached
         bool isRefunded;              // True if funds were refunded
     }
 
     // Function to create a new fundraising project
-    function createproject(string calldata _name, uint256 _goal) public {
+    function createproject(string calldata _name, uint256 _goal) external {
         // Get storage reference for the project
         Fund_Raise_Info storage project = fundRaisingProjects[_name];
 
@@ -59,8 +66,8 @@ contract RaiseFunds {
         project.isRefunded = false;
 
         // Add the creator as the first funder with 0 contribution
-        funders memory funder = funders({funder: msg.sender, amount: 0});
-        project.funder.push(funder);
+      
+       
 
         // Initialize total raised to 0
         project.totalRaised = 0;
@@ -83,7 +90,7 @@ contract RaiseFunds {
 
    require(projectInfo.isActive, "Project is not active");
 
-    uint256 amount = msg.value.converterUSD();
+    uint256 amount = msg.value;
     
     // Prevent overfunding
     
@@ -91,7 +98,7 @@ contract RaiseFunds {
     // Record the fund
     projectInfo.totalRaised += amount;
     funders memory funder = funders({funder: msg.sender, amount: amount});
-    projectInfo.funder.push(funder);
+ 
     funderinfo.push(funder);
 
     // Check if goal reached
@@ -99,6 +106,29 @@ contract RaiseFunds {
         projectInfo.isCompleted = true;
         projectInfo.isActive = false;
     }
+}
+
+
+
+
+function withdraw_fundRaised(string calldata _name) external {
+    Fund_Raise_Info storage projectInfo = fundRaisingProjects[_name];
+
+    require(projectInfo.isCompleted, "Project is not completed");
+ 
+    require(projectInfo.owner == msg.sender, "Only the project creator can withdraw funds");
+    uint256 amount = projectInfo.goal;
+    address owner = projectInfo.owner;
+    uint256 payout = (amount * 98)/100;
+    uint256 fee = amount -payout;
+    (bool success,)=owner.call{value: payout}('');
+
+     require( success, 'widthdrawal faild');
+     (bool success1,)=i_owner.call{value:fee}('');
+
+    require( success1, 'failde to send fee to owner');
+
+    projectInfo.totalRaised = 0;
 }
 
 
