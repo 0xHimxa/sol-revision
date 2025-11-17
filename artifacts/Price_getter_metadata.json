@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Locked-vault/getprice.sol": "Price_getter"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+			]
+		},
+		"Locked-vault/getprice.sol": {
+			"keccak256": "0xb1efcc5b7105bf8974df751d7a3bafb4d53bd50ac57829b51a6b76f46b5b98b0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4e6e016d5b58b7ec5fc22397ae817f7e52d774919804afc8c55ab7cef8dc0421",
+				"dweb:/ipfs/QmeV6uSqXHgfkmQn6D95eem5W7KkTPnJAb8oA6F6wni869"
+			]
+		}
+	},
+	"version": 1
+}
