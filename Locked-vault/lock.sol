@@ -18,7 +18,7 @@ struct Vault{
 mapping ( address => Vault[]) public vault;
 
 
-function lock_token( uint256 _unlock)external payable{
+function lock_token( uint256 _unlock)external payable value_check{
 
 require(msg.value.convert_eth_USD() >  minimum_lock_USD, "Minimum lock amount is 1 USD");
  
@@ -38,7 +38,7 @@ require(msg.value.convert_eth_USD() >  minimum_lock_USD, "Minimum lock amount is
 
 function unLock_Token() external{
 
-require(vault[msg.sender].length > 0, 'you dont have anytoken looked');
+
 
 
 for(uint256 i = vault[msg.sender].length; i > 0 ; i--){
@@ -63,7 +63,12 @@ uint256 index = i - 1;
 
 }
 
+modifier value_check(){
+require(vault[msg.sender].length > 0, 'you dont have anytoken looked');
 
+_;
+
+}
 
 
 }

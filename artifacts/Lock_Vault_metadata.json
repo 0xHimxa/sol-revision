@@ -130,11 +130,11 @@
 			]
 		},
 		"Locked-vault/lock.sol": {
-			"keccak256": "0x013604f20adab19bbcbec4c5bac0d9a485a5fb30e7c8ede105f50cb1eb504aa6",
+			"keccak256": "0x7c33c1550c94fb4c69426e4d20383c257ca19aae3295eec73ce28aa73466b267",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://991032d4050353ce4dcd962bcce22fa77fa7f480a28fdc8e9aeccc4736efbc92",
-				"dweb:/ipfs/Qmb6KQ1wYACfaGtFjQYJfisDrQTYuTbiGJLb2bAPtV4Rbz"
+				"bzz-raw://8e61b79ca2b63743b285e8ed73cf0fe5fb20666afe17a5ea9410880d178c965e",
+				"dweb:/ipfs/QmaaWARHQbhdvaPFhPLvGsfVqccyUa95DwhWJYJTpxmVCW"
 			]
 		}
 	},
