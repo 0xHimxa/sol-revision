@@ -79,6 +79,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "getVersion",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "i_owner",
 				"outputs": [
 					{
@@ -138,11 +151,11 @@
 			]
 		},
 		"fundme/fundme.sol": {
-			"keccak256": "0x3079c882592bbcce5af8611957309870f188f4be32e82be36622525465b73634",
+			"keccak256": "0x761b8dc74e0d551c51d34348790baee2977c0e4f50123d016caeb4de3f10584b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2f4274ef0d9d304f57a182a183f51b1c07dd4244ad15dffa89c24ea478459419",
-				"dweb:/ipfs/QmdHWnqv2GtWf6dhjYafw2UZV4u4vrNNfFdUaRZKPLyTQA"
+				"bzz-raw://6b5dea137e0c5a070c24fbbc9269fb12c658ba5560a8603437ba02d9dc64d313",
+				"dweb:/ipfs/QmT6Lzvw8wwFTpTyjNFhEPxtsXaxwZ7aaqXPJ5CupsSdUn"
 			]
 		},
 		"fundme/lib.sol": {
