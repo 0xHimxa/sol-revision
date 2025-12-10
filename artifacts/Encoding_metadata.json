@@ -56,6 +56,56 @@
 				],
 				"stateMutability": "pure",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "multiDecode",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "multiEncode",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "winner",
+						"type": "address"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -86,11 +136,11 @@
 	},
 	"sources": {
 		"low/encoding.sol": {
-			"keccak256": "0x1af412e063816194b812982c374760be186dcb888254651dc6f70b8bbf07f775",
+			"keccak256": "0xfedfcb88a28259fac74789b6fac927e2b154ca37d7a4918668aaa92ce466e4cb",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7bc99824cca8f79a61ede0d8c86575b425fa655b13855667c6b0229c037968f8",
-				"dweb:/ipfs/QmRuR5hFgZAUe6YtKXHqwLQeE65k9fzgG8pPzkVE8D8UKc"
+				"bzz-raw://51e69550a7711813f368df82b089be09bb5a0d0669e35029e26796b9d63b8e60",
+				"dweb:/ipfs/QmemUSWBAa5svuK29YnffzbNCyPF6QiGtCFiwxbqCTKCMA"
 			]
 		}
 	},
