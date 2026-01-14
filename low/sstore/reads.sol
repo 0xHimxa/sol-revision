@@ -8,7 +8,7 @@ uint256 ageMarried= 25;
 
 
 
-function showPacking() public view returns(bytes memory slot0, bytes memory slot1,uint256 ageReturend){
+function showPacking() public view returns(bytes32 slot0, bytes32  slot1,uint256 ageRetured){
 
     assembly{
     slot0 := sload(0)
@@ -16,8 +16,9 @@ function showPacking() public view returns(bytes memory slot0, bytes memory slot
     }
 
 
-ageReturend = 4;
-
+assembly{
+ ageRetured:= sload(0)   
+}
 
 
 

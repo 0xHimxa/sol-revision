@@ -38,18 +38,18 @@
 				"name": "showPacking",
 				"outputs": [
 					{
-						"internalType": "bytes",
+						"internalType": "bytes32",
 						"name": "slot0",
-						"type": "bytes"
+						"type": "bytes32"
 					},
 					{
-						"internalType": "bytes",
+						"internalType": "bytes32",
 						"name": "slot1",
-						"type": "bytes"
+						"type": "bytes32"
 					},
 					{
 						"internalType": "uint256",
-						"name": "ageReturend",
+						"name": "ageRetured",
 						"type": "uint256"
 					}
 				],
@@ -85,11 +85,11 @@
 	},
 	"sources": {
 		"low/sstore/reads.sol": {
-			"keccak256": "0xe6932b3047e12d763496b0fc2797757d21ba4e18a651c80d37c413ecd0b9a9ce",
+			"keccak256": "0xd1300b0fea27401e57ace9399296be438ca2ce7a2f98a86c189ce6c823caaf13",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://08bd11d98d92ccadbfa82f9b95cf75fb447a777af78819c6f1789fad6eafa61f",
-				"dweb:/ipfs/QmeuHRPdWmHnXMAQzBrD2wb7WEMzi7t6LCcgwxmxgHx261"
+				"bzz-raw://2cfc34461d30acb2023a68ba8bf6c250958827c3981ce0729651e6f149af1bd5",
+				"dweb:/ipfs/QmdjHAVVHMZzTYy9uquE2VFKsgYuBzmDuPRfJVJo7xSqTH"
 			]
 		}
 	},
