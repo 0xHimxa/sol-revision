@@ -27,7 +27,7 @@ contract B {
 
 contract A {
     uint256 public num;
-    address public sender;
+    address public senders;
     uint256 public value;
 
     function setVars(address _contract, uint256 _num) public payable {

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.31+commit.fd3a2265"
 	},
 	"language": "Solidity",
 	"output": {
@@ -160,7 +160,7 @@
 		"compilationTarget": {
 			"low/call.sol": "CallAnything"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "osaka",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -173,11 +173,11 @@
 	},
 	"sources": {
 		"low/call.sol": {
-			"keccak256": "0xc9e86c2fdecfefe2517f3a46677191cb4b026291aead3c3f00a2409f1c894fd3",
+			"keccak256": "0xe7e49e580d62d0750f8a1a30e452284d5016ecbf3eb341f2d518d945b1031c42",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2d352a4e5aa993e8b45963068249fbb31729075c2afe61cb561c77ed754cdd12",
-				"dweb:/ipfs/QmRNmbkArvcy9dWbwYyCmGKf315yBUQ6gLmjC5VWi2GPv7"
+				"bzz-raw://9e9277d73fa957492bfe67747b1c19406408cbef593db8492ddfe1f52752edc2",
+				"dweb:/ipfs/QmW1P3K2r5gV5dSzJQPeJVW6vqP3D3XmLhHYf7XZQXjiNQ"
 			]
 		}
 	},
