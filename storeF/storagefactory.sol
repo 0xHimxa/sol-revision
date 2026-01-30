@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.30;
+pragma solidity ^0.8.30;
 
 
 //over here we deploy simplestorgr in another contract
@@ -18,7 +18,8 @@ contract StorageFactory{
 
  SimpleStroge[] public listofsimpleStorage;
  
-
+uint256 public how;
+uint256 wow;
 
  // now we create a fn that deploy it
 

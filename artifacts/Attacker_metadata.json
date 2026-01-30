@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "attackBank",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "bank",
+				"outputs": [
+					{
+						"internalType": "contract VulnerableBank",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_bank",
+						"type": "address"
+					}
+				],
+				"name": "initalizeBank",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Rentrancy/bank.sol": "Attacker"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Rentrancy/bank.sol": {
+			"keccak256": "0x7e87a905a4b30cd1853ddf22f9f725c496872b5da8f253d2532d5a803ad99727",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8a3e188df4e1a84aa560e988caa8f9461ba17a3327fd7456664c1feed5d4eab6",
+				"dweb:/ipfs/QmVLmuYoG4eTrFn7DP7TebZvognzAmgwQz2AXidB4KfGjn"
+			]
+		}
+	},
+	"version": 1
+}

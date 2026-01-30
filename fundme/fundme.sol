@@ -1,7 +1,7 @@
 
 // we want to be able to recive money and be able to withdraw
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.30;
+pragma solidity ^0.8.0;
 import{PriceConverter} from "./lib.sol";
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
@@ -40,7 +40,7 @@ function getVersion()public view returns(uint256){
 
 }
 
-
+  
 
 
 

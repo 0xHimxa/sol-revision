@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.30+commit.73712a01"
+		"version": "0.8.31+commit.fd3a2265"
 	},
 	"language": "Solidity",
 	"output": {
@@ -10,6 +10,19 @@
 				"name": "deploySimpleStorage",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "how",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -84,7 +97,7 @@
 		"compilationTarget": {
 			"storeF/storagefactory.sol": "StorageFactory"
 		},
-		"evmVersion": "prague",
+		"evmVersion": "osaka",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -97,19 +110,19 @@
 	},
 	"sources": {
 		"simpleSttorage.sol": {
-			"keccak256": "0x4215d2b91d58664a9a067b5c8adfee93d786079e65c52d365ffaa938b3b510a9",
+			"keccak256": "0xb1245de65e7f0603b33a5e04dba627e91ed9c01eca649ecf8d70bc5f73c96f19",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d4ac0e12b05e1a148feef1b373f924171fbd41e7d1a0a6f340e33b153b16beab",
-				"dweb:/ipfs/QmV2KvDC59JCToGtosGfVxNzTRiZtmqAidnNR7HhtFjwzE"
+				"bzz-raw://cb151b13522bf01daf16b72ba0af106df9b0d31b33be3624c0befb64c14c8a6f",
+				"dweb:/ipfs/QmdpU7qY1zsWGou3UDQTbzkgW3U6aeLfkkYGvEkJ6Vf9oq"
 			]
 		},
 		"storeF/storagefactory.sol": {
-			"keccak256": "0x4df81f2f06f8fddf399708cf93f60a35734e62595bd302db7fb90c9694cf4d21",
+			"keccak256": "0xf1d4fd696cfb5367411b40066b6872b44bd8803f591485b794d4185f57ca6304",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b49f3963903c681645cd995f54966aec286211139b0b42c3968e353d8b783830",
-				"dweb:/ipfs/QmcrkJXe9GGXYrWwDRk4ap9poVpGjKdFoH1hfDWj7VG1eU"
+				"bzz-raw://f92ac953a00811b4639f57c987e5e46e94f0a3f42565a85126dbb276be817788",
+				"dweb:/ipfs/QmReAKA1QbjmiVYiw61jaVspbc76riSziJRuL456Pkh7Bu"
 			]
 		}
 	},
