@@ -19,14 +19,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint8",
-						"name": "amount",
-						"type": "uint8"
-					}
-				],
-				"name": "increase",
+				"inputs": [],
+				"name": "decrease",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -45,7 +39,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"mathIssue/overflow.sol": "OverFlow"
+			"mathIssue/overflow.sol": "UnderFlow"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
