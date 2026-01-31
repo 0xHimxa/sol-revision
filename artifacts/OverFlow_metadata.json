@@ -1,0 +1,72 @@
+{
+	"compiler": {
+		"version": "0.8.31+commit.fd3a2265"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "count",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "amount",
+						"type": "uint8"
+					}
+				],
+				"name": "increase",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"mathIssue/overflow.sol": "OverFlow"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"mathIssue/overflow.sol": {
+			"keccak256": "0x033990a8fb591ab7634bc961b3459134fc79c5f84e9208b9ab0abc8b66c5c1f0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ddaea35af4dfc7f77c8fb3ad2fbbd2b18644e13b5e2a237119530358467ce88a",
+				"dweb:/ipfs/QmW9YMsATuX8Hr1da6D6mwF3H4TxXJh9u2MkgtvYb8QuNP"
+			]
+		}
+	},
+	"version": 1
+}
