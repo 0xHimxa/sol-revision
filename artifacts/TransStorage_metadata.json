@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.34+commit.80d5c536"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "spender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "grantFlashAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"storage/transeint.sol": "TransStorage"
+		},
+		"evmVersion": "osaka",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"storage/transeint.sol": {
+			"keccak256": "0xba9f22fff4f779745526e11cfb95fc0837c61801562cfc7337e429efb3fcf07d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cb790cbdbde3f20236c007c3fb6a99f347593f715634f0fc9b0d725ed3814c5e",
+				"dweb:/ipfs/QmTVAjfa3gcfpJTYRnLEpLXWeK1E3KpaadkrfjZnSx2Viy"
+			]
+		}
+	},
+	"version": 1
+}

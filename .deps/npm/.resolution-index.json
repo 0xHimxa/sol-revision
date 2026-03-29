@@ -1,0 +1,10 @@
+{
+  "storage/transeint.sol": {
+    "__sources__": {
+      "storage/transeint.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity  ^0.8.28;\n\n\n// the transient keyword those not support  mapping, dynamic bytes or array, fixed sized array, all dont not support structs and enum\n\n// it only support basic types like , uint/int, bool, address, bytes 2 - bytes32 \n\n\ncontract TransStorage{\n\n//mapping (address => mapping(address => uint256)) transient flashAllowance;\n\n\n\nstruct UserSeasions{\n    address  user;\n    uint256 startTime;\n    bool isActive;\n} \n\n //UserSeasions transient currentUser;\n\n\n bool transient acctive;\n\nfunction grantFlashAllowance(address spender,uint256 amount) external{\n//  flashAllowance[msg.sender][spender] = amount;\n\n\n}\n\n\n\n\n\n\n\n\n}\n\n",
+        "file": "storage/transeint.sol"
+      }
+    }
+  }
+}

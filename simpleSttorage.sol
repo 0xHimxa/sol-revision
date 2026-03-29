@@ -1,8 +1,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
+ import { ReceiverTemplate} from "./receiver.sol";
+
+ contract SimpleStroge is  ReceiverTemplate{
 
 
-contract SimpleStroge{
+
+
+
+
+constructor(address _forwarder)ReceiverTemplate(_forwarder){
+
+}
+
+
+
 
 // if we dont asign val for this it default to 0
 
@@ -47,7 +59,7 @@ mapping(string => uint256) public nameToFavNum;
 
 
 
-function addPersonNum(string memory _name, uint256 _favnum) external  {
+function addPersonNum(string memory _name, uint256 _favnum) public  {
    
    //now we add the username and thier fav num to the mapping
    nameToFavNum[_name] = _favnum;
@@ -62,6 +74,11 @@ function addPersonNum(string memory _name, uint256 _favnum) external  {
 
 
 
+  function _processReport(bytes calldata report) internal override {
+        // Intentionally empty; satisfies the abstract ReceiverTemplateUpgradeable requirement
+        (string memory _name, uint256 _num ) = abi.decode(report, (string, uint256));
+   addPersonNum(_name,_num);
+    }
 
 
 
@@ -89,5 +106,7 @@ function store(uint256 _favnum) public virtual {
 
     return myfavnum;
 } 
+
+
 
 }
