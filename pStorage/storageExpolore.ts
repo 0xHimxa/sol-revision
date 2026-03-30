@@ -69,6 +69,28 @@ console.log("Array base slot:", nextArrayDataSlot);
 
 
 
+// this is  for getting  mapping  that have structs as values (mapping(address => Struct)) where Struct has multiple fields (e.g., uint256, address, etc.)
+// Assuming the mapping is declared at slot 3 (change this as needed)
+const structMappingSlot = 4n;   // or 0n, 1n, etc. depending on the contract
+
+// Step 1: Find the Virtual Anchor for the Owner
+// Formula: keccak256(address, slot)
+const structOwnerHex = encodeAbiParameters(
+  parseAbiParameters('address, uint256'),
+  [myAddress, structMappingSlot]
+);
+
+const structVirtualAnchor = keccak256(structOwnerHex);
+const nextStructDataSlot = fromHex(structVirtualAnchor, 'bigint') + 1n;   // convert to bigint then add
+console.log("Struct mapping virtual anchor:", structVirtualAnchor);
+
+
+
+
+
+
+
+
 
 
 
