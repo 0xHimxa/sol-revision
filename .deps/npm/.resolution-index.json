@@ -6,5 +6,13 @@
         "file": "storage/transeint.sol"
       }
     }
+  },
+  "pStorage/contract.sol": {
+    "__sources__": {
+      "pStorage/contract.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ncontract StorageLab {\n    // Slot 0: Packing Test\n    // These three should all fit into ONE 32-byte slot.\n    // 16 bytes + 8 bytes + 4 bytes = 28 bytes total.\n    uint128 public a = 0xAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA; \n    uint64  public b = 0xBBBBBBBBBBBBBBBB;\n    uint32  public c = 0xCCCCCCCC;\n\n    // Slot 1: Long String vs Short String Test\n    // Start with a short string (under 31 bytes).\n    string public description = \"Short\"; \n\n    // Slot 2: Dynamic Array Test\n    // Slot 2 stores the length. Data starts at keccak256(2).\n    uint256[] public scores;\n\n    // Slot 3: Nested Mapping Test\n    // allowance[owner][spender] = amount\n    mapping(address => mapping(address => uint256)) public allowance;\n\n    // Slot 4: Struct in Mapping with Packing\n    struct User {\n        uint128 balance; // 16 bytes\n        uint128 points;  // 16 bytes (Packs with balance into 1 slot)\n        uint256 id;      // 32 bytes (New slot)\n    }\n    mapping(address => User) public users;\n\n    constructor() {\n        scores.push(100);\n        scores.push(200);\n    }\n\n    // --- Helper Functions for your Tests ---\n\n    function setLongString() public {\n        description = \"This is a very long string that will definitely trigger the long storage strategy!\";\n    }\n\n    function setAllowance(address spender, uint256 amount) public {\n        allowance[msg.sender][spender] = amount;\n    }\n\n    function setUser(address addr, uint128 bal, uint128 pts, uint256 _id) public {\n        users[addr] = User(bal, pts, _id);\n    }\n}",
+        "file": "pStorage/contract.sol"
+      }
+    }
   }
 }
