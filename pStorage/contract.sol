@@ -17,9 +17,9 @@ contract StorageLab {
     // Slot 2 stores the length. Data starts at keccak256(2).
     uint256[] public scores;
 
-    // Slot 3: Nested Mapping Test
-    // allowance[owner][spender] = amount
-    mapping(address => mapping(address => uint256)) public allowance;
+    // // Slot 3: Nested Mapping Test
+    // // allowance[owner][spender] = amount
+    // mapping(address => mapping(address => uint256)) public allowance;
 
     // Slot 4: Struct in Mapping with Packing
     struct User {
@@ -28,6 +28,7 @@ contract StorageLab {
         uint256 id;      // 32 bytes (New slot)
     }
     mapping(address => User) public users;
+    mapping(address=> uint) balance;
 
     constructor() {
         scores.push(100);
@@ -40,8 +41,8 @@ contract StorageLab {
         description = "This is a very long string that will definitely trigger the long storage strategy!";
     }
 
-    function setAllowance(address spender, uint256 amount) public {
-        allowance[msg.sender][spender] = amount;
+    function setbalnce(uint256 amount) public {
+       balance[msg.sender] = amount;
     }
 
     function setUser(address addr, uint128 bal, uint128 pts, uint256 _id) public {

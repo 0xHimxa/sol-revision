@@ -11,13 +11,19 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [],
-				"name": "a",
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "balances",
 				"outputs": [
 					{
-						"internalType": "uint128",
+						"internalType": "uint256",
 						"name": "",
-						"type": "uint128"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -25,12 +31,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "b",
+				"name": "counter",
 				"outputs": [
 					{
-						"internalType": "uint64",
+						"internalType": "uint8",
 						"name": "",
-						"type": "uint64"
+						"type": "uint8"
 					}
 				],
 				"stateMutability": "view",
@@ -38,12 +44,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "c",
+				"name": "extraData",
 				"outputs": [
 					{
-						"internalType": "uint32",
+						"internalType": "uint256",
 						"name": "",
-						"type": "uint32"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -51,7 +57,20 @@
 			},
 			{
 				"inputs": [],
-				"name": "description",
+				"name": "lessImportantValue",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -63,14 +82,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "scores",
+				"inputs": [],
+				"name": "newBigValue",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -83,75 +96,63 @@
 			},
 			{
 				"inputs": [],
-				"name": "setLongString",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "addr",
-						"type": "address"
-					},
-					{
-						"internalType": "uint128",
-						"name": "bal",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "pts",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					}
-				],
-				"name": "setUser",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "setbalnce",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
+				"name": "owner",
+				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
 					}
 				],
-				"name": "users",
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "paused",
 				"outputs": [
 					{
-						"internalType": "uint128",
-						"name": "balance",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "points",
-						"type": "uint128"
-					},
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "id",
+						"name": "_data",
+						"type": "uint256"
+					}
+				],
+				"name": "setExtraData",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "smallNumber",
+				"outputs": [
+					{
+						"internalType": "uint16",
+						"name": "",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "version",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -172,7 +173,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"pStorage/contract.sol": "StorageLab"
+			"pStorage/first.sol": "StorageV2"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
@@ -186,12 +187,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"pStorage/contract.sol": {
-			"keccak256": "0xce5b2105170ff669751fcd473d137e7cca85e1900f10d16893abbc2de7c940cc",
+		"pStorage/first.sol": {
+			"keccak256": "0x488b66c5f9def4f427f0c0bdd21937333ed1ed6db72f32a8bfc8b5eb128309a5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ae4e8670e708fb9980dc2f762d346f1b3790f0142b8e996a61a6486f177bf5f5",
-				"dweb:/ipfs/Qmd49R17Ht4U2bEUK8pDSMQ7KC5MEk9efuxdfR8ePj5TwK"
+				"bzz-raw://9537031d5cb0ba119dcfd3a985e440ba95cdf048724c881793d2d10a04270aae",
+				"dweb:/ipfs/QmYPsqNNoGncmMWkUizMMQMjh9QySik3SEMo3ZuwxPV7Gx"
 			]
 		}
 	},
