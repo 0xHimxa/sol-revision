@@ -6,24 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "consecutiveWins",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "bool",
@@ -56,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"exersice.sol": "CoinFlip"
+			"exersice.sol": "IConflip"
 		},
 		"evmVersion": "osaka",
 		"libraries": {},
